@@ -84,7 +84,7 @@ class HealerWorkflow:
             diagnosis = await workflow.execute_activity(
                 diagnose_pod,  # Now uses Gemma2 internally
                 details,
-                start_to_close_timeout=timedelta(seconds=60),
+                start_to_close_timeout=timedelta(seconds=300),
                 retry_policy=RetryPolicy(
                     maximum_attempts=3,
                     backoff_coefficient=2.0,
